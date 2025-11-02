@@ -1,0 +1,104 @@
+header, nav, footer {
+    text-align: center;
+}
+
+nav a{
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: white
+}
+
+nav a:hover {
+    border-bottom: 2px orange solid;
+    font-size: 2em;
+    transition: .9s;
+}
+
+h1 {
+    font-family: "Moo Lah Lah", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 3.5em;
+}
+
+
+body {
+    background-color: black;
+    color: whitesmoke;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 0.9em;
+}
+
+main figure {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.home_container {
+    width: 500px;
+}
+
+#content {
+    margin:0 auto;
+    color: white
+}
+
+iframe {
+    display: flex;
+    margin: 0 auto;
+}
+
+table {
+    margin: 0px auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: white;
+}
+
+#table-header {
+    background-color:darkgray;
+}
+
+ul {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.table-row {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.hobby {
+    color: yellow;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: rgb(17, 97, 134);
+}
+
