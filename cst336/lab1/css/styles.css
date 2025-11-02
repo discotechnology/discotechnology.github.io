@@ -16,15 +16,31 @@ nav a:hover {
     transition: .9s;
 }
 
+h1 {
+    font-family: "Moo Lah Lah", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 3.5em;
+}
+
+
 body {
     background-color: black;
-    color: gray
+    color: whitesmoke;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    font-size: 0.9em;
 }
 
 main figure {
@@ -83,5 +99,6 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
-    color: rgb(17, 97, 134)
+    color: rgb(17, 97, 134);
 }
+
