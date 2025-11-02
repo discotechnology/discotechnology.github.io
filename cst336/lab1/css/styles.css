@@ -32,10 +32,51 @@ main figure {
     margin-bottom: 0px;
 }
 
+.home_container {
+    width: 500px;
+}
+
+#content {
+    margin:0 auto;
+    color: white
+}
+
+table {
+    margin: 0px auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: white;
+}
+
+#table-header {
+    background-color:darkgray;
+}
+
+ul {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.table-row {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.hobby {
+    color: yellow;
+    font-weight: bold;
+}
+
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
-    color: rgb(17, 54, 134)
+    color: rgb(17, 97, 134)
 }
