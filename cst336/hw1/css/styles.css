@@ -69,7 +69,6 @@ nav a:active {
 main {
     position: relative;
     top: 300px;
-    margin-bottom: 100px;
 }
 
 .content {
@@ -77,6 +76,10 @@ main {
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
+}
+
+#history-page {
+    flex-direction: row-reverse;
 }
 
 .img-wrapper {
@@ -87,6 +90,7 @@ main {
     max-width: 900px;
     margin-left: 50px;
     margin-top: 0;
+    margin-bottom: 100px;
     font-size: 1.2em;
 }
 
