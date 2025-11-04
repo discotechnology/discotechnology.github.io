@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <title>David Rosenfeld: HW1</title>
+</head>
+<body>
+    <header>
+        <h1>The Networking Network</h1>
+        <h2>We're all just bytes on the wire, baby!</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">Networking History</a>
+            <a href="media.html">Networking Media</a>
+            <a href="protocols.html" style="color: black; background-color: white;">Common Protocols</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <div class="content" id="protocols-page">
+            <div class="img-wrapper">
+                <img src="img/protocols.jpg" alt="Networking Image" width="500" height="500">
+            </div>
+            <section class="page-text" id="protocols-page-text">
+                <h3>Commonly Encountered Network Protocols</h3>
+                <p>Network protocols are the standardized rules that govern how devices communicate and exchange data across a network. 
+                    Each protocol serves a specific function — from transferring files to resolving domain names — and operates using 
+                    designated port numbers that help direct traffic to the correct service. Understanding these common protocols is essential 
+                    for anyone working with or studying networking, as they form the backbone of digital communication.</p>
+                <p>One of the most fundamental protocols is the <b><i>Transmission Control Protocol (TCP)</i></b>, which ensures reliable, ordered data 
+                    delivery between devices. It works alongside the <b><i>Internet Protocol (IP)</i></b> — together known as TCP/IP — to route data packets across networks.</p>
+                <p> Many popular services run on top of TCP. For instance, <b><i>HTTP</i></b> uses port 80 to enable web browsers and 
+                    servers to exchange web pages, while its secure counterpart <b><i>HTTPS</i></b> uses port 443, encrypting traffic via SSL/TLS for privacy and security. 
+                    Another widely used TCP-based service is <b><i>FTP</i></b> on ports 20 and 21, designed for uploading and downloading files between systems.
+                    <b><i>SSH</i></b>, running on port 22, provides encrypted command-line access to remote systems, replacing older, 
+                    insecure methods like <b><i>Telnet</i></b>. <b><i>SMTP</i></b> on port 25 handles outgoing 
+                    email delivery, while <b><i>POP3</i></b> on port 110 and <b><i>IMAP</i></b> on port 143 manage incoming messages. </p>
+                <p>Other protocols rely on <b><i>UDP (User Datagram Protocol)</i></b>, which trades reliability for speed. UDP is ideal for real-time 
+                    applications where slight data loss is acceptable, such as <b><i>DNS</i></b> on port 53, which translates domain names 
+                    (like “example.com”) into IP addresses. Similarly, <b><i>DHCP</i></b>, using ports 67 and 68, automatically 
+                    assigns IP addresses to devices joining a network, simplifying network management. <b><i>SNMP</i></b> on port 
+                    161 allows administrators to monitor and configure networked devices, while <b><i>TFTP</i></b> on port 69 provides a 
+                    lightweight, connectionless method for transferring files, often used in network booting.</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <figure>
+                <img src="img/otter.png" alt="CST Logo" width="75" height="75">
+            </figure>
+            <div>
+                CST336 - Internet Programming. 2025&copy; Rosenfeld <br>
+                <strong>Disclaimer:</strong> This website was made as an assignment for academic purposes only, it is not intended to be taken seriously.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -78,23 +78,24 @@ main {
     align-items: flex-start;
 }
 
-#history-page {
+#history-page, #protocols-page {
     flex-direction: row-reverse;
 }
 
 .img-wrapper {
     margin-top: 8px;
+    margin-bottom: 50px;
 }
 
 .page-text {
     max-width: 900px;
     margin-left: 50px;
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 125px;
     font-size: 1.2em;
 }
 
-#history-page-text {
+#history-page-text, #protocols-page-text {
     margin-right: 50px;
     margin-left: 0;
 }
