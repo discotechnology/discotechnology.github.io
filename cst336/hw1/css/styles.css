@@ -20,6 +20,12 @@ h2 {
     font-style: normal;
 }
 
+h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    
+}
+
 header {
     background: url("../img/header.jpg");
     background-size: cover;
@@ -63,16 +69,41 @@ nav a:active {
 main {
     position: relative;
     top: 300px;
+    margin-bottom: 100px;
 }
 
 .content {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.img-wrapper {
+    margin-top: 8px;
 }
 
 .page-text {
-    max-width: 600px;
+    max-width: 900px;
+    margin-left: 50px;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
 }
 
 body {
