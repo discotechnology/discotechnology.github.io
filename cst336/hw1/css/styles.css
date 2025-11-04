@@ -94,6 +94,11 @@ main {
     font-size: 1.2em;
 }
 
+#history-page-text {
+    margin-right: 50px;
+    margin-left: 0;
+}
+
 footer {
     background-color: darkslategray;
     color: white;
