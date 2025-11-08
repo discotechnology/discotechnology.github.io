@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\Users\\david\\OneDrive\\Documents\\CST 336\\discotechnology.github.io\\discotechnology.github.io\\cst336\\hw1\\index.html"
+            "file": "c:\\Users\\david\\OneDrive\\Documents\\CST 336\\discotechnology.github.io\\discotechnology.github.io\\cst336\\lab2\\index.html"
         }
     ]
 }
