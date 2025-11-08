@@ -3,21 +3,34 @@
     <head>
         <title> Guess a Number </title>
         <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-
         <header>
-            <h1>Guess the Number!</h1>
-            <h2>Guess a number between 1 and 99 in seven attempts!</h2>
+            <img src="img/page_title.png" alt="Guess a Number Logo" id="page-title">
         </header>
         <br>
-        <div id="main">
-          Enter a guess: 
-          <input type="text" id="playerGuess" size="5">         
-          <button id="guessBtn"> Guess </button> <br>
-          <button id="resetBtn"> Reset </button> 
-          <div id="feedback"></div>
-          <span id="previousGuesses"> </span>
+        <div class="content-wrapper">
+            <div class="content">
+                <div id="instructions">Guess a number between 1 and 99 in seven tries or less!</div>
+                <div id="game-area">
+                    <div id="button-container">  
+                        <button id="guessBtn" size="10"> Guess </button>
+                        <button id="resetBtn" size="10"> Reset </button>
+                    </div>
+                    <input type="text" id="playerGuess" size="10">
+                </div>              
+                <div id="feedback"></div>
+                <div id="previousGuesses"> </div>
+                <div id="remainingGuesses"> </div>
+                <div id="results">
+                    <span id="wins"></span>
+                    <span id="losses"></span>
+                </div>
+            </div>
         </div>
         <script src="js/script.js"></script>
     </body>
