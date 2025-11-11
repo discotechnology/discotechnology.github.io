@@ -1,4 +1,5 @@
 let correctPoints = 20;
+var score = 0;
 
 document.querySelector("button").addEventListener("click", gradeQuiz);
 
@@ -9,36 +10,38 @@ function gradeQuiz(){
         return;
     }
 
-    let score = 0;
+    score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
 
     // Question 1
     if (q1Response == "sacramento") {
-        document.querySelector("#q1Feedback").textContent = "Correct!";
-        document.querySelector("#q1Feedback").className = "bg-success text-white";
-        document.querySelector("#markImg1").innerHTML = "<img src='img/checkmark.png' alt='Correct'>";
-        score += correctPoints;
+        rightAnswer(1);
     }
     else {
-        document.querySelector("#q1Feedback").textContent = "Incorrect.";
-        document.querySelector("#q1Feedback").className = "bg-warning text-white";
-        document.querySelector("#markImg1").innerHTML = "<img src='img/xmark.png' alt='Incorrect'>";
+        wrongAnswer(1);
     }
 
 
     // Question 2
     if (q2Response == "mo") {
-        document.querySelector("#q2Feedback").textContent = "Correct!";
-        document.querySelector("#q2Feedback").className = "bg-success text-white";
-        document.querySelector("#markImg2").innerHTML = "<img src='img/checkmark.png' alt='Correct'>";
-        score += correctPoints;
+        rightAnswer(2);
     }
     else {
-        document.querySelector("#q2Feedback").textContent = "Incorrect.";
-        document.querySelector("#q2Feedback").className = "bg-warning text-white";
-        document.querySelector("#markImg2").innerHTML = "<img src='img/xmark.png' alt='Incorrect'>";
+        wrongAnswer(2);
     }
+
+    // Question 3
+    if (document.querySelector("#Jefferson").checked &&
+        document.querySelector("#Roosevelt").checked &&
+        !document.querySelector("#Jackson").checked &&
+        !document.querySelector("#Franklin").checked) {
+        rightAnswer(3);
+    }
+    else {
+        wrongAnswer(3);
+    }
+
 
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
 
@@ -55,4 +58,17 @@ function isFormValid() {
         document.querySelector("#validationFeedback").textContent += "Question 2 was not answered. ";
     }
     return isValid;
+}
+
+function rightAnswer(index) {
+    document.querySelector(`#q${index}Feedback`).textContent = "Correct!";
+    document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/checkmark.png' alt='Correct'>";
+    score += correctPoints;
+}
+
+function wrongAnswer(index) {
+    document.querySelector(`#q${index}Feedback`).textContent = "Incorrect.";
+    document.querySelector(`#q${index}Feedback`).className = "bg-warning text-white";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' alt='Incorrect'>";
 }
