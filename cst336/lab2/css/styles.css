@@ -18,6 +18,9 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -37,6 +40,7 @@ header img {
     font-weight: 200;
     font-style: normal;
     font-size: 1.5em;
+    margin: 0;
 }
 
 #instructions {
@@ -105,6 +109,23 @@ button {
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
+}
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
 }
 
 body {
