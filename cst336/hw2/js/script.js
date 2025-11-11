@@ -3,6 +3,7 @@ var score = 0;
 var attempts = localStorage.getItem("total_attempts");
 
 displayQ4Choices();
+displayQ5Choices();
 
 document.querySelector("button").addEventListener("click", gradeQuiz);
 
@@ -18,6 +19,7 @@ function gradeQuiz(){
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
     let q4Response = document.querySelector('input[name="q4"]:checked').value;
+    let q6Response = document.querySelector("#q6").value;
 
     // Question 1
     if (q1Response == "sacramento") {
@@ -55,6 +57,26 @@ function gradeQuiz(){
         wrongAnswer(4);
     }
 
+    //Question 5
+    if (document.querySelector("#Alaska").checked &&
+        document.querySelector("#Hawaii").checked &&
+        !document.querySelector("#Arizona").checked &&
+        !document.querySelector("#Vermont").checked) {
+        rightAnswer(5);
+    }
+    else {
+        wrongAnswer(5);
+    }
+
+    //Question 6
+    if (q6Response == "whitney") {
+        rightAnswer(6);
+    }
+    else {
+        wrongAnswer(6);
+    }
+    
+
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
     document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
     localStorage.setItem("total_attempts", attempts);
@@ -73,7 +95,11 @@ function isFormValid() {
     }
     if (document.querySelector('input[name="q4"]:checked') == null) {
         isValid = false;
-        document.querySelector("#validationFeedback").textContent += "Answer Q3. ";
+        document.querySelector("#validationFeedback").textContent += "Answer Q4. ";
+    }
+    if (document.querySelector("#q6").value == "") {
+        isValid = false;
+        document.querySelector("#validationFeedback").textContent += "Answer Q6. ";
     }
     return isValid;
 }
@@ -83,7 +109,16 @@ function displayQ4Choices() {
     choices = _.shuffle(choices);
     for (let i = 0; i < choices.length; i++) {
         document.querySelector("#q4Choices").innerHTML +=
-            `<input type="radio" name="q4" value="${choices[i]}"> <label for="${choices[i]}"> ${choices[i]}</label> `;
+            `<div class="bg-info rounded bg-opacity-75"><input type="radio" name="q4" value="${choices[i]}"> <label for="${choices[i]}"> ${choices[i]}</label></div>`;
+    }
+}
+
+function displayQ5Choices() {
+    let choices = ["Hawaii", "Alaska", "Vermont", "Arizona"];
+    choices = _.shuffle(choices);
+    for (let i = 0; i < choices.length; i++) {
+        document.querySelector("#q5Choices").innerHTML +=
+            `<div class="bg-info rounded bg-opacity-75"><input type="checkbox" name="q5" id="${choices[i]}"> <label for="${choices[i]}"> ${choices[i]}</label></div>`;
     }
 }
 

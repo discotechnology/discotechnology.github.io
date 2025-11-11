@@ -14,12 +14,21 @@
 }
 
 .quiz-question {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     margin: 30px;
     padding: 15px;
     background-color: rgba(30, 144, 255, 0.7);
     border-radius: 8px;
     width: fit-content;
     height: fit-content;
+}
+
+#q4Choices, #q5Choices {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 #results-area {
@@ -55,5 +64,5 @@ footer img {
 
 body {
     background: url('../img/background.png');
-    background-size: cover;
+    background-size: cover repeat;
 }

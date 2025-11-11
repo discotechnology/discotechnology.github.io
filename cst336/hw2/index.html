@@ -39,11 +39,10 @@
             <!-- Question 3 -->
             <div class="quiz-question">
                 <h3><span id="markImg3"></span>Which presidents are carved into Mount Rushmore?</h3>
-                <input type="checkbox" id="Jackson"> <label for="Jackson"> A. Jackson</label>
-                <input type="checkbox" id="Franklin"> <label for="Franklin"> B. Franklin</label>
-                <input type="checkbox" id="Jefferson"> <label for="Jefferson"> T. Jefferson</label>
-                <input type="checkbox" id="Roosevelt"> <label for="Roosevelt"> T. Roosevelt</label>
-                <br><br>
+                <div class="bg-info rounded bg-opacity-75"><input type="checkbox" id="Jackson"> <label for="Jackson"> A. Jackson</label></div>
+                <div class="bg-info rounded bg-opacity-75"><input type="checkbox" id="Franklin"> <label for="Franklin"> B. Franklin</label></div>
+                <div class="bg-info rounded bg-opacity-75"><input type="checkbox" id="Jefferson"> <label for="Jefferson"> T. Jefferson</label></div>
+                <div class="bg-info rounded bg-opacity-75"><input type="checkbox" id="Roosevelt"> <label for="Roosevelt"> T. Roosevelt</label></div>
                 <div id="q3Feedback"></div>
             </div>
             
@@ -52,8 +51,28 @@
             <div class="quiz-question">
                 <h3><span id="markImg4"></span>What is the smallest US State?</h3>
                 <div id="q4Choices"></div>
-                <br><br>
                 <div id="q4Feedback"></div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question">
+                <h3><span id="markImg5"></span>Which states are not part of the continental US?</h3>
+                <div id="q5Choices"></div>
+                <div id="q5Feedback"></div>
+            </div>
+
+            <!-- Question 6-->
+            <div class="quiz-question">
+                <h3> <span id="markImg6"> What is the tallest mountain in the Sierra Nevada range?</span></h3>
+                <select id="q6">
+                    <option value="">Select one of the following:</option>
+                    <option value="white"> White Mountain</option>
+                    <option value="lassen"> Lassen Peak </option>
+                    <option value="shasta"> Mt. Shasta </option>
+                    <option value="whitney"> Mt. Whitney </option>
+                </select>
+                <br><br>
+                <div id="q6Feedback"></div>
             </div>
 
             <div id="results-area" class="bg-info bg-opacity-75 rounded">
