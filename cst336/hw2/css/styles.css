@@ -6,7 +6,6 @@
 }
 
 .content {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +24,7 @@
     height: fit-content;
 }
 
-#q4Choices, #q5Choices {
+#q4Choices, #q5Choices, #q8Choices {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -64,5 +63,6 @@ footer img {
 
 body {
     background: url('../img/background.png');
-    background-size: cover repeat;
+    background-size: cover;
+    background-repeat: repeat-y;
 }

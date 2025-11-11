@@ -4,6 +4,7 @@ var attempts = localStorage.getItem("total_attempts");
 
 displayQ4Choices();
 displayQ5Choices();
+displayQ8Choices();
 
 document.querySelector("button").addEventListener("click", gradeQuiz);
 
@@ -20,6 +21,8 @@ function gradeQuiz(){
     let q2Response = document.querySelector("#q2").value;
     let q4Response = document.querySelector('input[name="q4"]:checked').value;
     let q6Response = document.querySelector("#q6").value;
+    let q7Response = document.querySelector("#q7").value.toLowerCase();
+    let q8Response = document.querySelector('input[name="q8"]:checked').value;
 
     // Question 1
     if (q1Response == "sacramento") {
@@ -75,6 +78,22 @@ function gradeQuiz(){
     else {
         wrongAnswer(6);
     }
+
+    // Question 7
+    if (q7Response == "philadelphia") {
+        rightAnswer(7);
+    }
+    else {
+        wrongAnswer(7);
+    }
+
+    // Question 8
+    if (q8Response == "Texas") {
+        rightAnswer(8);
+    }
+    else {
+        wrongAnswer(8);
+    }
     
 
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
@@ -101,6 +120,14 @@ function isFormValid() {
         isValid = false;
         document.querySelector("#validationFeedback").textContent += "Answer Q6. ";
     }
+    if (document.querySelector("#q7").value == "") {
+        isValid = false;
+        document.querySelector("#validationFeedback").textContent += "Answer Q7. ";
+    }
+    if (document.querySelector('input[name="q8"]:checked') == null) {
+        isValid = false;
+        document.querySelector("#validationFeedback").textContent += "Answer Q8. ";
+    }
     return isValid;
 }
 
@@ -119,6 +146,15 @@ function displayQ5Choices() {
     for (let i = 0; i < choices.length; i++) {
         document.querySelector("#q5Choices").innerHTML +=
             `<div class="bg-info rounded bg-opacity-75"><input type="checkbox" name="q5" id="${choices[i]}"> <label for="${choices[i]}"> ${choices[i]}</label></div>`;
+    }
+}
+
+function displayQ8Choices() {
+    let choices = ["Texas", "California", "Nevada", "Colorado"];
+    choices = _.shuffle(choices);
+    for (let i = 0; i < choices.length; i++) {
+        document.querySelector("#q8Choices").innerHTML +=
+            `<div class="bg-info rounded bg-opacity-75"><input type="radio" name="q8" value="${choices[i]}"> <label for="${choices[i]}"> ${choices[i]}</label></div>`;
     }
 }
 
