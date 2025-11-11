@@ -23,6 +23,8 @@ function gradeQuiz(){
     let q6Response = document.querySelector("#q6").value;
     let q7Response = document.querySelector("#q7").value.toLowerCase();
     let q8Response = document.querySelector('input[name="q8"]:checked').value;
+    let q9Response = document.querySelector("#q9").value;
+    let q10Response = document.querySelector("#q10").value.toLowerCase();
 
     // Question 1
     if (q1Response == "sacramento") {
@@ -94,9 +96,33 @@ function gradeQuiz(){
     else {
         wrongAnswer(8);
     }
+
+    // Question 9
+    if (q9Response == "virgin") {
+        rightAnswer(9);
+    }
+    else {
+        wrongAnswer(9);
+    }
+
+    // Question 10
+    if (q10Response == "washington") {
+        rightAnswer(10);
+    }
+    else {
+        wrongAnswer(10);
+    }
     
 
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
+    if (score >= 80) {
+        document.querySelector("#totalScore").className = "text-success";
+        document.querySelector("#totalScore").innerHTML += "<br>Congratulations, you did great!";
+    }
+    else {
+        document.querySelector("#totalScore").className = "text-danger";
+        document.querySelector("#totalScore").innerHTML += "<br>I think you can do better than that...";
+    }
     document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
     localStorage.setItem("total_attempts", attempts);
 
@@ -128,6 +154,15 @@ function isFormValid() {
         isValid = false;
         document.querySelector("#validationFeedback").textContent += "Answer Q8. ";
     }
+    if (document.querySelector("#q9").value == "") {
+        isValid = false;
+        document.querySelector("#validationFeedback").textContent += "Answer Q9. ";
+    }
+    if (document.querySelector("#q10").value == "") {
+        isValid = false;
+        document.querySelector("#validationFeedback").textContent += "Answer Q10. ";
+    }
+
     return isValid;
 }
 
