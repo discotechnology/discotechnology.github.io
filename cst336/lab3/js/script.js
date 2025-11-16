@@ -27,8 +27,17 @@ async function initializeStates() {
 
 async function displayCity() {
     document.querySelector("#zipError").textContent = "";
+    document.querySelector("#city").textContent = "";
+    document.querySelector("#latitude").textContent = "";
+    document.querySelector("#longitude").textContent = "";
 
     let zipCode = document.querySelector("#zip").value;
+    if(zipCode.length > 5) {
+        document.querySelector("#zipError").textContent = " Zip code not found.";
+        document.querySelector("#zipError").style.color = "red";
+        return;
+    }
+
     let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
 
     let response = await fetch(url);
