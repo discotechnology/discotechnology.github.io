@@ -3,6 +3,8 @@
 document.querySelector("#zip").addEventListener("change",displayCity);
 document.querySelector("#state").addEventListener("change",displayCounties);
 document.querySelector("#username").addEventListener("change",checkUsername);
+document.querySelector("#pwd").addEventListener("focus",suggestPassword);
+document.querySelector("#pwd").addEventListener("blur",removeSuggestPassword);
 document.querySelector("#signupForm").addEventListener("submit", function(event) {validateForm(event);});
 
 
@@ -17,7 +19,6 @@ async function initializeStates() {
     let url = "https://csumb.space/api/allStatesAPI.php";
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data)
 
     for(i in data) {
         stateSelect.innerHTML += `<option value="${data[i].usps}">${data[i].state}</option>`;
@@ -25,12 +26,21 @@ async function initializeStates() {
 }
 
 async function displayCity() {
+    document.querySelector("#zipError").textContent = "";
+
     let zipCode = document.querySelector("#zip").value;
     let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
 
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
+
+    //True if zip code not found
+    if(!data) {
+        document.querySelector("#zipError").textContent = " Zip code not found.";
+        document.querySelector("#zipError").style.color = "red";
+        return;
+    }
 
     document.querySelector("#city").textContent = data.city;
     document.querySelector("#latitude").textContent = data.latitude;
@@ -48,8 +58,20 @@ async function displayCounties() {
     document.querySelector("#county").innerHTML = "<option>Select a county:</option>";
 
     for(i of data) {
-        document.querySelector("#county").innerHTML += `<option> ${i.county} </option>`
+        document.querySelector("#county").innerHTML += `<option> ${i.county} </option>`;
     }
+}
+
+async function suggestPassword() {
+    let response = await fetch("https://csumb.space/api/suggestedPassword.php?length=8");
+    let data = await response.json();
+    console.log(data);
+
+    document.querySelector("#suggestedPwd").textContent = ` Suggested password: ${data.password}`;
+}
+
+async function removeSuggestPassword() {
+    document.querySelector("#suggestedPwd").textContent = "";
 }
 
 async function checkUsername() {
@@ -80,13 +102,13 @@ function validateForm(e) {
     document.querySelector("#passwordError").textContent = "";
 
     if(username == "") {
-        document.querySelector("#usernameValidation").textContent = "Username required.";
+        document.querySelector("#usernameValidation").textContent = " Username required.";
         document.querySelector("#usernameValidation").style.color = "red";
         isValid = false;
     }
 
     if(password.length < 6) {
-        document.querySelector("#passwordError").textContent += "Password must be at least 6 characters. "
+        document.querySelector("#passwordError").textContent += " Password must be at least 6 characters. "
         document.querySelector("#passwordError").style.color = "red";
         isValid = false;
     }
