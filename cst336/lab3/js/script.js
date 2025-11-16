@@ -6,7 +6,23 @@ document.querySelector("#username").addEventListener("change",checkUsername);
 document.querySelector("#signupForm").addEventListener("submit", function(event) {validateForm(event);});
 
 
+//Initialization
+initializeStates();
+
 //Functions
+async function initializeStates() {
+    let stateSelect = document.querySelector("#state");
+    stateSelect.innerHTML = "<option>Choose one:</option>";
+
+    let url = "https://csumb.space/api/allStatesAPI.php";
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data)
+
+    for(i in data) {
+        stateSelect.innerHTML += `<option value="${data[i].usps}">${data[i].state}</option>`;
+    }
+}
 
 async function displayCity() {
     let zipCode = document.querySelector("#zip").value;
@@ -22,7 +38,7 @@ async function displayCity() {
 }
 
 async function displayCounties() {
-    let state = document.querySelector("#state").value;
+    let state = document.querySelector("#state").value.toLowerCase();
     let url = `https://csumb.space/api/countyListAPI.php?state=${state}`;
 
     let response = await fetch(url);
