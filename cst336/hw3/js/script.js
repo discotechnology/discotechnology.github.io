@@ -1,5 +1,6 @@
 //Event Listeners
-document.querySelector("#pokeID").addEventListener("input", getPokemon);
+document.querySelector("#pokeID").addEventListener("change", getPokemon);
+document.querySelector("#pokeID").addEventListener("mouseout", getPokemon);
 document.querySelector("#impressMe").addEventListener("submit", function(event) {validateForm(event);});
 
 //Initialization
