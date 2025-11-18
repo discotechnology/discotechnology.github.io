@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <title> Dave's Pokemon Prover </title>
+</head>
+
+<body>
+    <header>
+        <h1> Dave's Pokemon Prover </h1>
+    </header>
+    <div class="content-wrapper">
+        <div class="content">
+            <div>
+                Can you prove that you've heard of at least one Pokemon<br>
+                by typing its name in the box below?<br><br>
+            </div>
+            
+            <div>
+                <form id="impressMe" action="victory.html">
+                    <input type="text" name="pokeID" id="pokeID">
+                    <input type="submit" id="submitButton" value="Prove it!">
+                </form>
+            </div>
+            <br>
+            <div id="pokeName"></div>
+            <figure id="pokeImg"></figure>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <img src="img/otter.png" alt="CST Logo" width="75" height="75">
+            <div>
+                CST336 - Internet Programming. 2025&copy; Rosenfeld <br>
+                <strong>Disclaimer:</strong> This website was made as an assignment for academic purposes only, it is not intended to be taken seriously.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    </body>
+</html>
