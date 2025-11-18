@@ -16,20 +16,14 @@
     </header>
     <div class="content-wrapper">
         <div class="content">
-            <div>
-                Can you prove that you've heard of at least one Pokemon<br>
-                by typing its name in the box below?<br><br>
+            <div id="victoryMessage">
+                <h2>Wow! You did it!</h2>
+                You knew the name of a Pokemon<br>
+                and you probably didn't look it up or anything!<br><br>
+                Make sure to screenshot this page and tell all your friends!
             </div>
-            
-            <div>
-                <form id="impressMe" action="victory.html">
-                    <input type="text" name="pokeID" id="pokeID">
-                    <input type="submit" id="submitButton" value="Prove it!">
-                </form>
-            </div>
-            <br>
-            <div id="pokeName"></div>
-            <figure id="pokeImg"></figure>
+            <br><br>
+            <button id="returnButton" onclick="location.href='index.html'" type="button">Prove it again?</button>
         </div>
     </div>
     <footer>
@@ -41,8 +35,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 
     </body>
 </html>
